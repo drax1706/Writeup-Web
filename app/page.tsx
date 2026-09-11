@@ -20,7 +20,7 @@ export default async function HomePage() {
     <div className="container editorial-home">
       <section className="editorial-hero" aria-labelledby="hero-title">
         <div className="editorial-hero-copy">
-          <p className="eyebrow"><span className="status-dot" /> WEB CTF · GHI CHÉP CÁ NHÂN</p>
+          <p className="eyebrow"><span className="status-dot" /> HOÀNG PHÚC · GHI CHÉP CÁ NHÂN</p>
           <h1 id="hero-title">Web CTF &amp;<br /><span>Security Notes</span></h1>
           <p className="editorial-hero-lead">Một góc nhỏ để mình ghi lại quá trình học <strong>An toàn thông tin.</strong></p>
           <p className="editorial-hero-description">Ở đây chủ yếu là các bài Web CTF mình đã làm, cách mình suy nghĩ khi gặp bài, những chỗ từng mắc và kiến thức rút ra sau khi giải xong.</p>
