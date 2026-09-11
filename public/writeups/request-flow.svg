@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title description">
+  <title id="title">Luồng xử lý request đăng nhập</title>
+  <desc id="description">Trình duyệt gửi request đến Next.js server, server truy vấn cơ sở dữ liệu và trả response.</desc>
+  <rect width="1200" height="520" rx="24" fill="#07110f"/>
+  <g fill="none" stroke="#203b33" stroke-width="1">
+    <path d="M0 80H1200M0 160H1200M0 240H1200M0 320H1200M0 400H1200M0 480H1200"/>
+    <path d="M80 0V520M160 0V520M240 0V520M320 0V520M400 0V520M480 0V520M560 0V520M640 0V520M720 0V520M800 0V520M880 0V520M960 0V520M1040 0V520M1120 0V520"/>
+  </g>
+  <g font-family="ui-monospace, monospace">
+    <rect x="70" y="170" width="270" height="180" rx="14" fill="#0d1d19" stroke="#315a4d" stroke-width="2"/>
+    <text x="105" y="225" fill="#55edae" font-size="18">01 / CLIENT</text>
+    <text x="105" y="275" fill="#e7f3ee" font-size="30" font-weight="700">Browser</text>
+    <text x="105" y="315" fill="#91aaa0" font-size="17">username + password</text>
+    <rect x="465" y="170" width="270" height="180" rx="14" fill="#0d1d19" stroke="#55edae" stroke-width="2"/>
+    <text x="500" y="225" fill="#55edae" font-size="18">02 / SERVER</text>
+    <text x="500" y="275" fill="#e7f3ee" font-size="30" font-weight="700">Application</text>
+    <text x="500" y="315" fill="#91aaa0" font-size="17">validate + query</text>
+    <rect x="860" y="170" width="270" height="180" rx="14" fill="#0d1d19" stroke="#315a4d" stroke-width="2"/>
+    <text x="895" y="225" fill="#55edae" font-size="18">03 / DATA</text>
+    <text x="895" y="275" fill="#e7f3ee" font-size="30" font-weight="700">Database</text>
+    <text x="895" y="315" fill="#91aaa0" font-size="17">parameterized SQL</text>
+    <path d="M360 238H440" stroke="#55edae" stroke-width="3"/>
+    <path d="m430 228 12 10-12 10" fill="none" stroke="#55edae" stroke-width="3"/>
+    <path d="M755 238H835" stroke="#55edae" stroke-width="3"/>
+    <path d="m825 228 12 10-12 10" fill="none" stroke="#55edae" stroke-width="3"/>
+    <text x="365" y="215" fill="#91aaa0" font-size="14">HTTPS</text>
+    <text x="760" y="215" fill="#91aaa0" font-size="14">BOUND VALUES</text>
+  </g>
+</svg>
