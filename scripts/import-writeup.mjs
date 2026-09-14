@@ -87,6 +87,7 @@ export async function importWriteup({
       data.summary ??
       "Bản nháp mới nhập: hãy cập nhật mô tả và metadata trước khi xuất bản.",
   });
+  if (data.sortOrder !== undefined) metadata.sortOrder = data.sortOrder;
   const publicPath = path.join(root, "content", "public", `${slug}.md`);
   const lockedPath = path.join(root, "content", "locked", slug);
   await assertPlainPath(root, publicPath);

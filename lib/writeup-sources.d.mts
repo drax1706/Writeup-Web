@@ -1,6 +1,6 @@
 import type { WriteupMetadata } from "../types/writeup";
 
-type EntryBase = { metadata: WriteupMetadata; contentPath: string };
+type EntryBase = { metadata: WriteupMetadata; contentPath: string; sortOrder?: number };
 export type WriteupEntry =
   | (EntryBase & { access: "public" })
   | (EntryBase & { access: "locked"; flagHashEnv: string });

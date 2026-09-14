@@ -86,6 +86,26 @@ async function lockedArticle(
 }
 
 describe("automatic write-up catalog", () => {
+  it("keeps publication dates first and explicit same-day order stable across access modes", async () => {
+    await publicArticle("a-second", { sortOrder: 2 });
+    await lockedArticle("z-first", { sortOrder: 1 });
+    await publicArticle("unordered");
+    await publicArticle("max-order", { sortOrder: Number.MAX_SAFE_INTEGER });
+    await publicArticle("older", { publishedAt: "2026-09-08", sortOrder: 0 });
+    await publicArticle("newer", { publishedAt: "2026-09-10" });
+    await publicArticle("draft-first", { sortOrder: 0, draft: true });
+    const summaries = await createWriteupCatalog(root).getWriteupSummaries();
+    expect(summaries.map(({ slug }) => slug)).toEqual([
+      "newer", "z-first", "a-second", "max-order", "unordered", "older",
+    ]);
+    expect(summaries.every((summary) => !("sortOrder" in summary))).toBe(true);
+  });
+
+  it.each([-1, 1.5, "1", Number.MAX_SAFE_INTEGER + 1])("rejects invalid sortOrder %s", async (sortOrder) => {
+    await publicArticle("invalid-order", { sortOrder });
+    await expect(readWriteupSources(root)).rejects.toThrow("Invalid front matter");
+  });
+
   it("shares all validated draft and published sources with Node authoring tools", async () => {
     await publicArticle("published-public");
     await publicArticle("draft-public", { draft: true });

@@ -3,9 +3,10 @@ title: "Reflected XSS và bài toán output context"
 slug: "reflected-xss-contexts"
 platform: "PortSwigger Web Security Academy"
 difficulty: "Medium"
-vulnerabilities: ["Cross-Site Scripting", "Output Encoding"]
+vulnerabilities: ["Cross-Site Scripting","Output Encoding"]
 publishedAt: "2026-09-02"
 summary: "Theo dấu input phản chiếu qua HTML, attribute và JavaScript context để chọn cách encode đầu ra chính xác."
+draft: true
 ---
 
 > Mọi ví dụ trong bài được thực hiện trên lab dành riêng cho học Web Security.

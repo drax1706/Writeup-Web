@@ -80,7 +80,7 @@ describe("Markdown import and preflight", () => {
   it("copies only known metadata and makes a published source a draft", async () => {
     await writeFile(
       file,
-      "---\ntitle: Imported\nslug: from-metadata\nplatform: CTF\ndifficulty: Hard\nvulnerabilities: [IDOR]\npublishedAt: 2026-09-01\nsummary: A deliberately public summary of this write-up.\ndraft: false\nflag: PRIVATE_METADATA_MUST_NOT_TRANSFER\n---\n## Body\n",
+      "---\ntitle: Imported\nslug: from-metadata\nplatform: CTF\ndifficulty: Hard\nvulnerabilities: [IDOR]\npublishedAt: 2026-09-01\nsummary: A deliberately public summary of this write-up.\ndraft: false\nsortOrder: 3\nflag: PRIVATE_METADATA_MUST_NOT_TRANSFER\n---\n## Body\n",
     );
     const result = await importWriteup({ root, file });
     const output = await readFile(result.filePath, "utf8");
@@ -89,6 +89,7 @@ describe("Markdown import and preflight", () => {
       draft: true,
       difficulty: "Hard",
       publishedAt: "2026-09-01",
+      sortOrder: 3,
     });
     expect(output).not.toContain("PRIVATE_METADATA");
   });

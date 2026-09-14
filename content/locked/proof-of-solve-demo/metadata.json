@@ -3,9 +3,12 @@
   "slug": "proof-of-solve-demo",
   "platform": "Vault Lab",
   "difficulty": "Easy",
-  "vulnerabilities": ["Access Control", "Session Security"],
+  "vulnerabilities": [
+    "Access Control",
+    "Session Security"
+  ],
   "publishedAt": "2026-09-04",
   "summary": "Một bài lab về kiểm soát truy cập. Nhập flag để mở phân tích, luồng khai thác và cách khắc phục.",
-  "draft": false,
+  "draft": true,
   "flagHashEnv": "DEMO_FLAG_HASH"
 }
