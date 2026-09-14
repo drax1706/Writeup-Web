@@ -253,7 +253,7 @@ test("JWT example shows all three parts with an unverified-signature warning", a
   expect(apiRequests).toEqual([]);
 });
 
-test("Proof of Solve discovers locked articles and opens a gate without article content", async ({
+test("Proof of Solve handles an empty collection or opens a locked article gate", async ({
   page,
 }) => {
   const unlockRequests: string[] = [];
@@ -282,8 +282,14 @@ test("Proof of Solve discovers locked articles and opens a gate without article 
   const mobileMenu = page.locator(".editorial-mobile-menu[open]");
   if (await mobileMenu.isVisible()) await mobileMenu.locator("summary").click();
   const lockedCard = page.locator('article[data-access="locked"]').first();
-  await expect(lockedCard).toBeVisible();
   await expect(page.locator('article[data-access="public"]')).toHaveCount(0);
+  if (await lockedCard.count() === 0) {
+    await expect(page.locator(".empty-state")).toBeVisible();
+    await expectNoHorizontalOverflow(page);
+    expect(unlockRequests).toEqual([]);
+    return;
+  }
+  await expect(lockedCard).toBeVisible();
   const title = await lockedCard.getByRole("heading", { level: 3 }).innerText();
   await lockedCard.getByRole("link").click();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(title);

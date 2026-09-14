@@ -6,6 +6,7 @@ type MetadataShape = {
 };
 type PublicSourceShape = MetadataShape & {
   draft: z.ZodDefault<z.ZodBoolean>;
+  sortOrder: z.ZodOptional<z.ZodNumber>;
 };
 
 export const writeupMetadataSchema: z.ZodObject<MetadataShape>;

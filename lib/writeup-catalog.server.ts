@@ -27,6 +27,7 @@ export function createWriteupCatalog(contentRoot: string) {
       .sort(
         (left, right) =>
           right.metadata.publishedAt.localeCompare(left.metadata.publishedAt) ||
+          (left.sortOrder ?? Infinity) - (right.sortOrder ?? Infinity) ||
           left.metadata.slug.localeCompare(right.metadata.slug),
       ),
   );

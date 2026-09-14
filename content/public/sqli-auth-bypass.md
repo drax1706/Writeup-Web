@@ -3,9 +3,10 @@ title: "SQL Injection Authentication Bypass"
 slug: "sqli-auth-bypass"
 platform: "Hack The Box"
 difficulty: "Easy"
-vulnerabilities: ["SQL Injection", "Authentication Bypass"]
+vulnerabilities: ["SQL Injection","Authentication Bypass"]
 publishedAt: "2026-09-03"
 summary: "Phân tích cách câu truy vấn đăng nhập bị thay đổi cấu trúc và cách loại bỏ tận gốc lỗi SQL injection."
+draft: true
 ---
 
 > Bài viết sử dụng ứng dụng lab được phép kiểm thử. Không áp dụng payload lên hệ thống khi chưa có sự cho phép.
